@@ -1,0 +1,27 @@
+node('master'){
+       
+           stage('check_ing')
+	       {
+	               
+		               git 'https://github.com/ravikumarrv/sample_demo.git'
+			               
+				           }
+					    
+					       stage ('maven_clean') {
+					              
+						             tool name: 'maven', type: 'maven'
+							            bat 'mvn clean'
+								       }
+								          
+									     stage('install'){
+									            
+										             tool name: 'maven', type: 'maven'
+											            bat 'mvn install'
+												       }
+												          stage ('package'){
+													           tool name: 'maven', type: 'maven'
+														          bat 'mvn package'
+															         
+																    }
+																       
+																	}
